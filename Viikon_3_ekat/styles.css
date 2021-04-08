@@ -1,0 +1,62 @@
+.form {
+  width: 400px;
+  height: 250px;
+  margin: 30px;
+  padding-bottom: 45px;
+  padding-left: 30px;
+  padding-top: 5px;
+  border-radius: 5px;
+}
+
+#ekaf {
+  background-color: pink;
+  border: 3px solid lightblue;
+}
+
+#tokaf {
+  background-color: lightblue;
+  border: 3px solid lightgreen;
+}
+
+#kolmasf {
+  background-color: lightgreen;
+  border: 3px solid violet;
+}
+
+#neljasf {
+  background-color: violet;
+  border: 3px solid yellow;
+}
+#viidesf {
+  background-color: yellow;
+  border: 3px solid pink;
+}
+
+#kuudesf {
+  background-color: pink;
+  border: 3px solid lightblue;
+}
+
+#seiskaf {
+  background-color: lightblue;
+  border: 3px solid lightgreen;
+}
+
+#kasif {
+  background-color: lightgreen;
+  border: 3px solid violet;
+}
+
+#ysif {
+  background-color: violet;
+  border: 3px solid yellow;
+}
+#kymppif {
+  background-color: yellow;
+  border: 3px solid pink;
+}
+
+#ykstf {
+  background-color: pink;
+  border: 3px solid lightblue;
+}
