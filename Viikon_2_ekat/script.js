@@ -61,7 +61,7 @@ function annaIka(){
   var ika = parseInt(document.getElementById('ika').value);
   document.write("Annoit iän: " + ika + "<br>");
   if(ika < 15){
-    document.write(ika + " vuotta, saaat ajaa polkupyörää");
+    document.write(ika + " vuotta, saat ajaa polkupyörää");
   }else if(ika < 18){
     document.write(ika + " vuotta, saat ajaa mopoa");
   }else{
@@ -70,7 +70,7 @@ function annaIka(){
   }
 
 function kaanna(){
-  var lang = parseInt(document.getElementById('kieli').value);
+  var lang = document.getElementById('kieli').value;
   if (lang == 'eng'){
     document.write("Hello world!");
   }else if (lang == 'swe'){

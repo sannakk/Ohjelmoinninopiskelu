@@ -47,7 +47,7 @@ function lasku(){
   luku4 = parseInt(document.getElementById('4').value);
   luku5 = parseInt(document.getElementById('5').value);
   var summa = luku1 + luku2 + luku3 + luku4 + luku5;
-  var ka = luku1 + luku2 + luku3 + luku4 + luku5 / 5;
+  var ka = summa / 5;
   document.write('lukujen summa on: ' + summa + ' ja keskiarvo on: ' + ka);
 }
 

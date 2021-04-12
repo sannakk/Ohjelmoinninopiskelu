@@ -25,16 +25,16 @@ function etsiKirjain(){
 
 function laskeKertoma(){
   var numero = document.getElementById('kertoma').value;
-  var laskettu = 1;
+  var lasku = 1;
   for (var l = 1; l <= numero; l=l+1){
-    laskettu*=l;
-document.write('<p>Luvun '+ numero + ' kertoma on ' + laskettu + '</p>');
+    lasku*=l;
   }
+document.write('<p>Luvun '+ numero + ' kertoma on ' + lasku + '</p>');
 }
 
 function tulostaLuvut(){
   var n = "";
-  for (var u = 1; u <= 100; u=u+1){
+  for (var u = 1; u <= 100; u++){
     if (u % 3 == 0 && u % 5 == 0){
       n +='Hipheijaa ';
     }else if (u % 5 == 0){
@@ -84,18 +84,19 @@ function suurinArvo(){
 }
 
 function randomKirjain(){
-  var pw = '';
-  var eka, toka;
-  pw = document.getElementById('ssana').value;
-  var taulu = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j','k', 'l', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u','v', 'x', 'y', 'z', 'å', 'ä', 'ö', 'w'];
+  var word = '';
+  var a;
+  var b;
+  word = document.getElementById('ssana').value;
+  var taulukko = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j','k', 'l', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u','v', 'x', 'y', 'z', 'å', 'ä', 'ö', 'w'];
   var temp = [];
   var lop='';
-  for(var s = 0; s < pw.length; s++){
-    eka = pw[s];
-    temp.push(eka);
-    var lisa = Math.floor(Math.random()*taulu.length);
-    toka = taulu[lisa];
-    temp.push(toka);
+  for(var m = 0; m < word.length; m++){
+    a = word[m];
+    temp.push(a);
+    var kirjain = Math.floor(Math.random()*taulukko.length);
+    b = taulukko[kirjain];
+    temp.push(b);
   }
   lop = temp.join('');
   document.write(lop);
@@ -104,28 +105,26 @@ function randomKirjain(){
 function numerot(){
   var pnro = parseInt(document.getElementById('pieninro').value);
   var inro = parseInt(document.getElementById('isompinro').value);
-  var palku;
-  var ralku;
-  var psumma=0;
-  var rsumma=0;
-  var pluvut='';
-  var rluvut='';
-  if(pnro%2 == 0){
-      palku = pnro;
-    }else {
-      palku = pnro+1;
-    }for(var b = palku; b<=inro; b+=2){
-      pluvut += b + ' ';
-      psumma += b;
-    }if(pnro%2 == 0)
-    {
-      ralku = pnro+1;
-    }else {
-      ralku = pnro;
-    }for(var r = ralku; r<=inro; r+=2)
-    {
-      rluvut += r + ' ';
-      rsumma += r;
+  var peka;
+  var ieka;
+  var pienisumma = 0;
+  var isosumma = 0;
+  var pieniluku ='';
+  var isoluku ='';
+  if(pnro % 2 == 0){
+      peka = pnro;
+    }else{
+      peka = pnro+1;
+    }for(var m = peka; m <= inro; m+=2){
+      pieniluku += m + ' ';
+      pienisumma += m;
+    }if(pnro % 2 == 0){
+      ieka = pnro+1;
+    }else{
+      ieka = pnro;
+    }for(var l = ieka; l<=inro; l+=2){
+      isoluku += l + ' ';
+      isosumma += l;
     }
-    document.write('<p>Parilliset numerot: ' + pluvut +' ja niiden summa: ' + psumma + '</p><p>Parittomat luvut: ' + rluvut + ' ja niiden summa: '+ rsumma + '</p>');
+    document.write('<p> Parilliset numerot: ' + pieniluku +' ja niiden summa: ' + pienisumma + '</p><p>Parittomat luvut: ' + isoluku + ' ja niiden summa: '+ isosumma + '</p>');
 }
