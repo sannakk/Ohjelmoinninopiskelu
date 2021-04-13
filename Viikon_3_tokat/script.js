@@ -1,8 +1,11 @@
-function laskePisteet(){
-  var pisteet = 0;
-  var annettuSana = document.getElementById('ssana').value;
-  for(var i = 0; i < annettuSana.length; i++){
-    switch (annettuSana[i]) {
+/*Yritin tehdä, mutta ei näistä tullu yhtään mitään, liian vaikeita mulle !
+Tossa ainoat mitä sain aikaan ja eka heti tulostaa väärin...*/
+
+function kirjaimet(){
+  var sana = document.getElementById('ssana').value;
+  var yht = 0;
+  for(var s = 0; s < sana.length; s++){
+  switch (sana[s]){
       case 'a':
       case 'e':
       case 'i':
@@ -15,8 +18,8 @@ function laskePisteet(){
       case 'N':
       case 'S':
       case 'T':
-        pisteet++;
-        break;
+      yht++;
+      break;
       case 'o':
       case 'ä':
       case 'k':
@@ -25,14 +28,14 @@ function laskePisteet(){
       case 'Ä':
       case 'K':
       case 'L':
-        pisteet+=2;
-        break;
+      yht+=2;
+      break;
       case 'u':
       case 'm':
       case 'U':
       case 'M':
-        pisteet+=3;
-        break;
+      yht+=3;
+      break;
       case 'y':
       case 'h':
       case 'j':
@@ -45,81 +48,39 @@ function laskePisteet(){
       case 'P':
       case 'R':
       case 'V':
-        pisteet+=4;
-        break;
+      yht+=4;
+      break;
       case 'ö':
       case 'd':
       case 'Ö':
       case 'D':
-        pisteet+=7;
-        break;
+      yht+=7;
+      break;
       case 'b':
       case 'f':
       case 'g':
       case 'B':
       case 'F':
       case 'G':
-        pisteet+=8;
-        break;
+      yht+=8;
+      break;
       case 'c':
       case 'C':
-        pisteet+=10;
-        break;
+      yht+=10;
+      break;
       default:
-        pisteet+=12;
+      yht+=12;
     }
-    document.write("<p>Sanan " + annettuSana + " pisteet ovat: " + pisteet + "</p>");
+    document.write("<p>Sanan " + sana + " pisteet on: " + yht + "</p>");
   }
 }
 
-function lottoNrot(){
-  var lnumerot = [];
-  var temp;
-  for(var lotto = 0; lotto < 7; lotto++){
-    temp = Math.floor(Math.random()*40)+1;
-    lnumerot[lotto] = temp;
+function lotto(){
+  var nrot;
+  var array = [];
+  for(var i = 0; i<7; i++){
+  nrot = Math.floor(Math.random()*40)+1;
+  array[i] = nrot;
   }
-  lnumerot.sort(/*function(a, b){return a-b}*/);
-
-  document.write('<p>'+lnumerot+'</p>');
-}
-
-function muunnaTaulukoksi(){
-  var jono = [];
-  jono = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
-  var taulu = '<table border="1">';
-  for(var j = 0; j < jono.length; j++){
-    taulu += '<tr>';
-    for(var k = 0; k < jono[j].length; k++){
-      taulu += '<td>' + jono[j][k] + '</td>';
-    }
-    taulu += '</tr>';
-  }
-  taulu += '</table>';
-  document.write(taulu);
-}
-
-function arvoKortit(){
-  var pakka = [''];
-  var maat = ['&#9828;', '&#9827;', '&#9826;', '&#9825;'];
-  //var maat = ['pa','ri','ru', 'he']
-  var numerot = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
-  laskuri = 0;
-  for(m = 0; m < maat.length; m++){
-    for(n = 0; n < numerot.length; n++){
-      if(m == maat.length-1 && n == numerot.length-1){
-        pakka[laskuri] = maat[m] + numerot[n];
-      }else{
-        pakka[laskuri] = maat[m]+numerot[n];
-        laskuri++;
-      }
-
-    }
-  }
-  var kortit = [];
-  for(l = 0; l < 5; l++){
-      temp = pakka[Math.floor(Math.random()*52)];
-      kortit[l] = temp;
-  }
-  document.write('<p>'+kortit+'</p>');
+  document.write(array);
 }
