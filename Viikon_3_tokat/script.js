@@ -1,6 +1,4 @@
-/*Yritin tehdä, mutta ei näistä tullu yhtään mitään, liian vaikeita mulle !
-Tossa ainoat mitä sain aikaan ja eka heti tulostaa väärin...*/
-
+//Tätä en saanut toimimaan oikein
 function kirjaimet(){
   var sana = document.getElementById('ssana').value;
   var yht = 0;
@@ -83,4 +81,32 @@ function lotto(){
   array[i] = nrot;
   }
   document.write(array);
+}
+
+
+/*Ei harmainta hajua
+function taulukko(){*/
+
+//Alku onnistu, mutta loppuosa piti kyllä katsoa mallia
+function kortit(){
+  var nrot = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
+  var maat = ["Hertta","Ruutu","Risti","Pata"];
+  var tulos = [];
+  lasku = 0;
+    for(maa = 0; maa < maat.length; maa++){
+    for(nro = 0; nro < nrot.length; nro++){
+if(maa == maat.length-1 && nro == nrot.length-1){
+  tulos[lasku]=maat[maa]+nrot[nro];
+}else{
+tulos[lasku]=maat[maa]+nrot[nro];
+  lasku++;
+}
+}
+}
+var yht = [];
+for(k = 0; k < 5; k++){
+luvut = tulos[Math.floor(Math.random()*52)];
+yht[k] = luvut;
+}
+document.write(yht);
 }
